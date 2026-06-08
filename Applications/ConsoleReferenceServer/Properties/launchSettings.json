@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleReferenceServer": {
+      "commandName": "Project",
+      "commandLineArgs": "-a"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
