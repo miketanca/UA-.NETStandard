@@ -208,26 +208,26 @@ namespace Alarms
                         analogAlarmController);
                     m_triggerMap.Add("Analog", analogSourceController);
 
-                    const string booleanTriggerName = "BooleanSource";
-                    const string booleanTriggerNodeName = alarmsNodeName + "." + booleanTriggerName;
-                    BaseDataVariableState booleanTrigger = AlarmHelpers.CreateVariable(
-                        alarmsFolder,
-                        NamespaceIndex,
-                        booleanTriggerNodeName,
-                        booleanTriggerName,
-                        boolValue: true);
-                    booleanTrigger.OnWriteValue = OnWriteAlarmTrigger;
-                    var booleanAlarmController = (AlarmController)
-                        Activator.CreateInstance(
-                            alarmControllerType,
-                            booleanTrigger,
-                            interval,
-                            true,
-                            Server.Telemetry);
-                    var booleanSourceController = new SourceController(
-                        booleanTrigger,
-                        booleanAlarmController);
-                    m_triggerMap.Add("Boolean", booleanSourceController);
+                    //const string booleanTriggerName = "BooleanSource";
+                    //const string booleanTriggerNodeName = alarmsNodeName + "." + booleanTriggerName;
+                    //BaseDataVariableState booleanTrigger = AlarmHelpers.CreateVariable(
+                    //    alarmsFolder,
+                    //    NamespaceIndex,
+                    //    booleanTriggerNodeName,
+                    //    booleanTriggerName,
+                    //    boolValue: true);
+                    //booleanTrigger.OnWriteValue = OnWriteAlarmTrigger;
+                    //var booleanAlarmController = (AlarmController)
+                    //    Activator.CreateInstance(
+                    //        alarmControllerType,
+                    //        booleanTrigger,
+                    //        interval,
+                    //        true,
+                    //        Server.Telemetry);
+                    //var booleanSourceController = new SourceController(
+                    //    booleanTrigger,
+                    //    booleanAlarmController);
+                    //m_triggerMap.Add("Boolean", booleanSourceController);
 
                     AlarmHolder mandatoryExclusiveLevel = new ExclusiveLevelHolder(
                         this,
@@ -241,29 +241,29 @@ namespace Alarms
 
                     m_alarms.Add(mandatoryExclusiveLevel.AlarmNodeName, mandatoryExclusiveLevel);
 
-                    AlarmHolder mandatoryNonExclusiveLevel = new NonExclusiveLevelHolder(
-                        this,
-                        alarmsFolder,
-                        analogSourceController,
-                        intervalString,
-                        GetSupportedAlarmConditionType(ref conditionTypeIndex),
-                        alarmControllerType,
-                        interval,
-                        optional: false);
-                    m_alarms.Add(
-                        mandatoryNonExclusiveLevel.AlarmNodeName,
-                        mandatoryNonExclusiveLevel);
+                    //AlarmHolder mandatoryNonExclusiveLevel = new NonExclusiveLevelHolder(
+                    //    this,
+                    //    alarmsFolder,
+                    //    analogSourceController,
+                    //    intervalString,
+                    //    GetSupportedAlarmConditionType(ref conditionTypeIndex),
+                    //    alarmControllerType,
+                    //    interval,
+                    //    optional: false);
+                    //m_alarms.Add(
+                    //    mandatoryNonExclusiveLevel.AlarmNodeName,
+                    //    mandatoryNonExclusiveLevel);
 
-                    AlarmHolder offNormal = new OffNormalAlarmTypeHolder(
-                        this,
-                        alarmsFolder,
-                        booleanSourceController,
-                        intervalString,
-                        GetSupportedAlarmConditionType(ref conditionTypeIndex),
-                        alarmControllerType,
-                        interval,
-                        optional: false);
-                    m_alarms.Add(offNormal.AlarmNodeName, offNormal);
+                    //AlarmHolder offNormal = new OffNormalAlarmTypeHolder(
+                    //    this,
+                    //    alarmsFolder,
+                    //    booleanSourceController,
+                    //    intervalString,
+                    //    GetSupportedAlarmConditionType(ref conditionTypeIndex),
+                    //    alarmControllerType,
+                    //    interval,
+                    //    optional: false);
+                    //m_alarms.Add(offNormal.AlarmNodeName, offNormal);
 
                     AddPredefinedNode(SystemContext, alarmsFolder);
                     StartTimer();
