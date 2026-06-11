@@ -268,6 +268,8 @@ namespace Alarms
                     AddPredefinedNode(SystemContext, alarmsFolder);
                     StartTimer();
                     m_allowEntry = true;
+
+                    OnStart(SystemContext, startMethod, [0u], []);
                 }
                 catch (Exception e)
                 {
