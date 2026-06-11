@@ -126,7 +126,7 @@
         <SecurityMode>SignAndEncrypt_3</SecurityMode>
         <SecurityPolicyUri>http://opcfoundation.org/UA/SecurityPolicy#Basic256Sha256</SecurityPolicyUri>
       </ServerSecurityPolicy>
-      <ServerSecurityPolicy>
+      <!--<ServerSecurityPolicy>
         <SecurityMode>Sign_2</SecurityMode>
         <SecurityPolicyUri></SecurityPolicyUri>
       </ServerSecurityPolicy>
@@ -169,7 +169,7 @@
       <ServerSecurityPolicy>
         <SecurityMode>None_1</SecurityMode>
         <SecurityPolicyUri>http://opcfoundation.org/UA/SecurityPolicy#None</SecurityPolicyUri>
-      </ServerSecurityPolicy>
+      </ServerSecurityPolicy>-->
       <!-- deprecated security policies for reference only 
       <ServerSecurityPolicy>
         <SecurityMode>Sign_2</SecurityMode>
