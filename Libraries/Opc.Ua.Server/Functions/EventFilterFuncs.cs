@@ -18,7 +18,7 @@ public static class EventFilterFuncs
         var sb = new StringBuilder();
         foreach (var item in filter.SelectClauses)
         {
-            sb.AppendLine(item.ToString());
+            sb.AppendLine($"{item}, {item.TypeDefinitionId}, {item.AttributeId}");
         }
         return sb.ToString();
     }
