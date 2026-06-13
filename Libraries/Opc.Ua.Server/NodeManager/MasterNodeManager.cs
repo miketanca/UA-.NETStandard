@@ -2645,6 +2645,7 @@ namespace Opc.Ua.Server
                     // validate the event filter.
                     EventFilter.Result result = filter.Validate(
                         new FilterContext(Server.NamespaceUris, Server.TypeTree, context, Server.Telemetry));
+                    var filterSelects = Opc.Ua.Server.Functions.EventFilterFuncs.EventFilterSelects(filter);
 
                     if (ServiceResult.IsBad(result.Status))
                     {
